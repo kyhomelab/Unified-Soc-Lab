@@ -4,11 +4,11 @@
 
 ### 1.1. My Motivation
 
-I've always been fascinated by the world of cybersecurity, especially the defensive side of things. Reading about threat actors, attack vectors, and defensive strategies is one thing, but I wanted to *really* get my hands dirty. To move beyond theory and into practice, I decided to build my own Security Operations Center (SOC) lab from the ground up. This project was my way of creating a personal digital playground where I could dissect attacks, master security tools, and truly understand the flow of a security incident from detection to resolution. This document is the log of my journey.
+I've always been fascinated by the world of cybersecurity, especially the defensive side of things. Reading about threat actors, attack vectors, and defensive strategies is one thing, but I wanted to get my hands dirty. To move beyond theory and into practice, I decided to build my own Security Operations Center (SOC) lab from the ground up. This project was my way of creating a personal digital playground where I could dissect attacks, master security tools, and truly understand the flow of a security incident from detection to resolution.
 
 ### 1.2. Design Philosophy
 
-From the start, I knew I wanted a modular and easily reproducible setup. That's why I chose a **containerized, microservices-based architecture** using *Docker* and *Docker Compose*. This approach has some killer advantages:
+From the start, I knew I wanted a modular and easily reproducible setup. That's why I chose a **containerized, microservices-based architecture** using *Docker* and *Docker Compose*. This approach has some advantages:
 
 *   ***Isolation:*** Every tool runs in its own self-contained environment, which keeps things clean and prevents a mess of conflicting dependencies.
 *   ***Scalability:*** It's a breeze to add new tools to the mix or swap components out as I discover new things.
@@ -19,13 +19,13 @@ From the start, I knew I wanted a modular and easily reproducible setup. That's 
 
 ### 2.1. The Host Machine
 
-I built the lab on a dedicated virtual machine, which keeps it nicely sandboxed from my main machine. I went with **VirtualBox** because I'm familiar with it and it's incredibly easy to use.
+I built the lab on a dedicated virtual machine, which keeps it nicely sandboxed from my main machine. I went with **Proxmox** because I'm familiar with it and it's incredibly easy to use.
 
 > **VM Specs:**
-> *   **CPUs:** `8` cores
+> *   **CPUs:** `4` cores
 > *   **RAM:** `16 GB`
-> *   **Storage:** `150 GB` (Dynamically Allocated)
-> *   **Networking:** `Bridged Adapter` (This gives the VM its own IP on my network, making it feel like a real, separate server.)
+> *   **Storage:** `150 GB` (Statically Allocated)
+> *   **Networking:** `Linux Bridge` (This gives the VM its own IP on my network, making it feel like a real, separate server.)
 
 ### 2.2. The Operating System
 
